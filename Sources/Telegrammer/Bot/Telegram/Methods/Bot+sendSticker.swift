@@ -15,6 +15,9 @@ public extension Bot {
         /// Sends the message silently. Users will receive a notification with no sound.
         var disableNotification: Bool?
 
+        /// Protects the contents of the sent message from forwarding and saving
+        var protectContent: Bool?
+
         /// If the message is a reply, ID of the original message
         var replyToMessageId: Int?
 
@@ -29,15 +32,17 @@ public extension Bot {
             case chatId = "chat_id"
             case sticker = "sticker"
             case disableNotification = "disable_notification"
+            case protectContent = "protect_content"
             case replyToMessageId = "reply_to_message_id"
             case allowSendingWithoutReply = "allow_sending_without_reply"
             case replyMarkup = "reply_markup"
         }
 
-        public init(chatId: ChatId, sticker: FileInfo, disableNotification: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
+        public init(chatId: ChatId, sticker: FileInfo, disableNotification: Bool? = nil, protectContent: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
             self.chatId = chatId
             self.sticker = sticker
             self.disableNotification = disableNotification
+            self.protectContent = protectContent
             self.replyToMessageId = replyToMessageId
             self.allowSendingWithoutReply = allowSendingWithoutReply
             self.replyMarkup = replyMarkup
@@ -45,7 +50,7 @@ public extension Bot {
     }
 
     /**
-     Use this method to send static .WEBP or animated .TGS stickers. On success, the sent Message is returned.
+     Use this method to send static .WEBP, animated .TGS, or video .WEBM stickers. On success, the sent Message is returned.
 
      SeeAlso Telegram Bot API Reference:
      [SendStickerParams](https://core.telegram.org/bots/api#sendsticker)
@@ -73,7 +78,7 @@ public extension Bot {
 public extension Bot {
 
     /**
-     Use this method to send static .WEBP or animated .TGS stickers. On success, the sent Message is returned.
+     Use this method to send static .WEBP, animated .TGS, or video .WEBM stickers. On success, the sent Message is returned.
 
      SeeAlso Telegram Bot API Reference:
      [SendStickerParams](https://core.telegram.org/bots/api#sendsticker)

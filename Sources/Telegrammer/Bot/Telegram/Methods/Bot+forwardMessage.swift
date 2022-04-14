@@ -15,6 +15,9 @@ public extension Bot {
         /// Sends the message silently. Users will receive a notification with no sound.
         var disableNotification: Bool?
 
+        /// Protects the contents of the forwarded message from forwarding and saving
+        var protectContent: Bool?
+
         /// Message identifier in the chat specified in from_chat_id
         var messageId: Int
 
@@ -23,13 +26,15 @@ public extension Bot {
             case chatId = "chat_id"
             case fromChatId = "from_chat_id"
             case disableNotification = "disable_notification"
+            case protectContent = "protect_content"
             case messageId = "message_id"
         }
 
-        public init(chatId: ChatId, fromChatId: ChatId, disableNotification: Bool? = nil, messageId: Int) {
+        public init(chatId: ChatId, fromChatId: ChatId, disableNotification: Bool? = nil, protectContent: Bool? = nil, messageId: Int) {
             self.chatId = chatId
             self.fromChatId = fromChatId
             self.disableNotification = disableNotification
+            self.protectContent = protectContent
             self.messageId = messageId
         }
     }

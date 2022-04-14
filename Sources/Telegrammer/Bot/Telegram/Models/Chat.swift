@@ -19,12 +19,14 @@ public final class Chat: Codable {
         case lastName = "last_name"
         case photo = "photo"
         case bio = "bio"
+        case hasPrivateForwards = "has_private_forwards"
         case description = "description"
         case inviteLink = "invite_link"
         case pinnedMessage = "pinned_message"
         case permissions = "permissions"
         case slowModeDelay = "slow_mode_delay"
         case messageAutoDeleteTime = "message_auto_delete_time"
+        case hasProtectedContent = "has_protected_content"
         case stickerSetName = "sticker_set_name"
         case canSetStickerSet = "can_set_sticker_set"
         case linkedChatId = "linked_chat_id"
@@ -55,6 +57,9 @@ public final class Chat: Codable {
     /// Optional. Bio of the other party in a private chat. Returned only in getChat.
     public var bio: String?
 
+    /// Optional. True, if privacy settings of the other party in the private chat allows to use tg://user?id=<user_id> links only in chats with the user. Returned only in getChat.
+    public var hasPrivateForwards: Bool?
+
     /// Optional. Description, for groups, supergroups and channel chats. Returned only in getChat.
     public var description: String?
 
@@ -67,11 +72,14 @@ public final class Chat: Codable {
     /// Optional. Default chat member permissions, for groups and supergroups. Returned only in getChat.
     public var permissions: ChatPermissions?
 
-    /// Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user. Returned only in getChat.
+    /// Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user; in seconds. Returned only in getChat.
     public var slowModeDelay: Int?
 
     /// Optional. The time after which all messages sent to the chat will be automatically deleted; in seconds. Returned only in getChat.
     public var messageAutoDeleteTime: Int?
+
+    /// Optional. True, if messages from the chat can't be forwarded to other chats. Returned only in getChat.
+    public var hasProtectedContent: Bool?
 
     /// Optional. For supergroups, name of group sticker set. Returned only in getChat.
     public var stickerSetName: String?
@@ -85,7 +93,7 @@ public final class Chat: Codable {
     /// Optional. For supergroups, the location to which the supergroup is connected. Returned only in getChat.
     public var location: ChatLocation?
 
-    public init (id: Int64, type: ChatType, title: String? = nil, username: String? = nil, firstName: String? = nil, lastName: String? = nil, photo: ChatPhoto? = nil, bio: String? = nil, description: String? = nil, inviteLink: String? = nil, pinnedMessage: Message? = nil, permissions: ChatPermissions? = nil, slowModeDelay: Int? = nil, messageAutoDeleteTime: Int? = nil, stickerSetName: String? = nil, canSetStickerSet: Bool? = nil, linkedChatId: Int64? = nil, location: ChatLocation? = nil) {
+    public init (id: Int64, type: ChatType, title: String? = nil, username: String? = nil, firstName: String? = nil, lastName: String? = nil, photo: ChatPhoto? = nil, bio: String? = nil, hasPrivateForwards: Bool? = nil, description: String? = nil, inviteLink: String? = nil, pinnedMessage: Message? = nil, permissions: ChatPermissions? = nil, slowModeDelay: Int? = nil, messageAutoDeleteTime: Int? = nil, hasProtectedContent: Bool? = nil, stickerSetName: String? = nil, canSetStickerSet: Bool? = nil, linkedChatId: Int64? = nil, location: ChatLocation? = nil) {
         self.id = id
         self.type = type
         self.title = title
@@ -94,12 +102,14 @@ public final class Chat: Codable {
         self.lastName = lastName
         self.photo = photo
         self.bio = bio
+        self.hasPrivateForwards = hasPrivateForwards
         self.description = description
         self.inviteLink = inviteLink
         self.pinnedMessage = pinnedMessage
         self.permissions = permissions
         self.slowModeDelay = slowModeDelay
         self.messageAutoDeleteTime = messageAutoDeleteTime
+        self.hasProtectedContent = hasProtectedContent
         self.stickerSetName = stickerSetName
         self.canSetStickerSet = canSetStickerSet
         self.linkedChatId = linkedChatId

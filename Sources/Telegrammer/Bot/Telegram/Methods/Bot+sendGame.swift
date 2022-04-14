@@ -15,6 +15,9 @@ public extension Bot {
         /// Sends the message silently. Users will receive a notification with no sound.
         var disableNotification: Bool?
 
+        /// Protects the contents of the sent message from forwarding and saving
+        var protectContent: Bool?
+
         /// If the message is a reply, ID of the original message
         var replyToMessageId: Int?
 
@@ -29,15 +32,17 @@ public extension Bot {
             case chatId = "chat_id"
             case gameShortName = "game_short_name"
             case disableNotification = "disable_notification"
+            case protectContent = "protect_content"
             case replyToMessageId = "reply_to_message_id"
             case allowSendingWithoutReply = "allow_sending_without_reply"
             case replyMarkup = "reply_markup"
         }
 
-        public init(chatId: Int64, gameShortName: String, disableNotification: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: InlineKeyboardMarkup? = nil) {
+        public init(chatId: Int64, gameShortName: String, disableNotification: Bool? = nil, protectContent: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: InlineKeyboardMarkup? = nil) {
             self.chatId = chatId
             self.gameShortName = gameShortName
             self.disableNotification = disableNotification
+            self.protectContent = protectContent
             self.replyToMessageId = replyToMessageId
             self.allowSendingWithoutReply = allowSendingWithoutReply
             self.replyMarkup = replyMarkup

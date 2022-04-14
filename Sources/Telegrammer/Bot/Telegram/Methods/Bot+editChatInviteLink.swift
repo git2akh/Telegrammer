@@ -12,30 +12,40 @@ public extension Bot {
         /// The invite link to edit
         var inviteLink: String
 
+        /// Invite link name; 0-32 characters
+        var name: String?
+
         /// Point in time (Unix timestamp) when the link will expire
         var expireDate: Int?
 
         /// Maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
         var memberLimit: Int?
 
+        /// True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified
+        var createsJoinRequest: Bool?
+
         /// Custom keys for coding/decoding `EditChatInviteLinkParams` struct
         enum CodingKeys: String, CodingKey {
             case chatId = "chat_id"
             case inviteLink = "invite_link"
+            case name = "name"
             case expireDate = "expire_date"
             case memberLimit = "member_limit"
+            case createsJoinRequest = "creates_join_request"
         }
 
-        public init(chatId: ChatId, inviteLink: String, expireDate: Int? = nil, memberLimit: Int? = nil) {
+        public init(chatId: ChatId, inviteLink: String, name: String? = nil, expireDate: Int? = nil, memberLimit: Int? = nil, createsJoinRequest: Bool? = nil) {
             self.chatId = chatId
             self.inviteLink = inviteLink
+            self.name = name
             self.expireDate = expireDate
             self.memberLimit = memberLimit
+            self.createsJoinRequest = createsJoinRequest
         }
     }
 
     /**
-     Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the edited invite link as a ChatInviteLink object.
+     Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a ChatInviteLink object.
 
      SeeAlso Telegram Bot API Reference:
      [EditChatInviteLinkParams](https://core.telegram.org/bots/api#editchatinvitelink)
@@ -63,7 +73,7 @@ public extension Bot {
 public extension Bot {
 
     /**
-     Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the edited invite link as a ChatInviteLink object.
+     Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a ChatInviteLink object.
 
      SeeAlso Telegram Bot API Reference:
      [EditChatInviteLinkParams](https://core.telegram.org/bots/api#editchatinvitelink)

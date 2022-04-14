@@ -21,7 +21,7 @@ public extension Bot {
         /// Mode for parsing entities in the message text. See formatting options for more details.
         var parseMode: ParseMode?
 
-        /// List of special entities that appear in message text, which can be specified instead of parse_mode
+        /// A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
         var entities: [MessageEntity]?
 
         /// Disables link previews for links in this message

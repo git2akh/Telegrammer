@@ -25,7 +25,7 @@ public extension Bot {
     }
 
     /**
-     Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+     Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.
 
      SeeAlso Telegram Bot API Reference:
      [SetChatDescriptionParams](https://core.telegram.org/bots/api#setchatdescription)
@@ -53,7 +53,7 @@ public extension Bot {
 public extension Bot {
 
     /**
-     Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+     Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.
 
      SeeAlso Telegram Bot API Reference:
      [SetChatDescriptionParams](https://core.telegram.org/bots/api#setchatdescription)

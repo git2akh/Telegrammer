@@ -35,7 +35,7 @@ public extension Bot {
     }
 
     /**
-     Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+     Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.
 
      SeeAlso Telegram Bot API Reference:
      [BanChatMemberParams](https://core.telegram.org/bots/api#banchatmember)
@@ -63,7 +63,7 @@ public extension Bot {
 public extension Bot {
 
     /**
-     Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success.
+     Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.
 
      SeeAlso Telegram Bot API Reference:
      [BanChatMemberParams](https://core.telegram.org/bots/api#banchatmember)

@@ -20,7 +20,7 @@ public extension Bot {
     }
 
     /**
-     Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
+     Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel. Returns True on success.
 
      SeeAlso Telegram Bot API Reference:
      [UnpinAllChatMessagesParams](https://core.telegram.org/bots/api#unpinallchatmessages)
@@ -48,7 +48,7 @@ public extension Bot {
 public extension Bot {
 
     /**
-     Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
+     Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel. Returns True on success.
 
      SeeAlso Telegram Bot API Reference:
      [UnpinAllChatMessagesParams](https://core.telegram.org/bots/api#unpinallchatmessages)

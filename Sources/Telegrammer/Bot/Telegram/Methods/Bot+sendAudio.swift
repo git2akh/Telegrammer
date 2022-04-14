@@ -18,7 +18,7 @@ public extension Bot {
         /// Mode for parsing entities in the audio caption. See formatting options for more details.
         var parseMode: ParseMode?
 
-        /// List of special entities that appear in the caption, which can be specified instead of parse_mode
+        /// A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode
         var captionEntities: [MessageEntity]?
 
         /// Duration of the audio in seconds
@@ -35,6 +35,9 @@ public extension Bot {
 
         /// Sends the message silently. Users will receive a notification with no sound.
         var disableNotification: Bool?
+
+        /// Protects the contents of the sent message from forwarding and saving
+        var protectContent: Bool?
 
         /// If the message is a reply, ID of the original message
         var replyToMessageId: Int?
@@ -57,12 +60,13 @@ public extension Bot {
             case title = "title"
             case thumb = "thumb"
             case disableNotification = "disable_notification"
+            case protectContent = "protect_content"
             case replyToMessageId = "reply_to_message_id"
             case allowSendingWithoutReply = "allow_sending_without_reply"
             case replyMarkup = "reply_markup"
         }
 
-        public init(chatId: ChatId, audio: FileInfo, caption: String? = nil, parseMode: ParseMode? = nil, captionEntities: [MessageEntity]? = nil, duration: Int? = nil, performer: String? = nil, title: String? = nil, thumb: FileInfo? = nil, disableNotification: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
+        public init(chatId: ChatId, audio: FileInfo, caption: String? = nil, parseMode: ParseMode? = nil, captionEntities: [MessageEntity]? = nil, duration: Int? = nil, performer: String? = nil, title: String? = nil, thumb: FileInfo? = nil, disableNotification: Bool? = nil, protectContent: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
             self.chatId = chatId
             self.audio = audio
             self.caption = caption
@@ -73,6 +77,7 @@ public extension Bot {
             self.title = title
             self.thumb = thumb
             self.disableNotification = disableNotification
+            self.protectContent = protectContent
             self.replyToMessageId = replyToMessageId
             self.allowSendingWithoutReply = allowSendingWithoutReply
             self.replyMarkup = replyMarkup

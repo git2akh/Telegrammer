@@ -6,7 +6,7 @@ public extension Bot {
     /// Parameters container struct for `unbanChatMember` method
     struct UnbanChatMemberParams: JSONEncodable {
 
-        /// Unique identifier for the target group or username of the target supergroup or channel (in the format @username)
+        /// Unique identifier for the target group or username of the target supergroup or channel (in the format @channelusername)
         var chatId: ChatId
 
         /// Unique identifier of the target user

@@ -20,7 +20,7 @@ public extension Bot {
     }
 
     /**
-     Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new invite link as String on success.
+     Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as String on success.
 
      SeeAlso Telegram Bot API Reference:
      [ExportChatInviteLinkParams](https://core.telegram.org/bots/api#exportchatinvitelink)
@@ -48,7 +48,7 @@ public extension Bot {
 public extension Bot {
 
     /**
-     Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new invite link as String on success.
+     Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as String on success.
 
      SeeAlso Telegram Bot API Reference:
      [ExportChatInviteLinkParams](https://core.telegram.org/bots/api#exportchatinvitelink)

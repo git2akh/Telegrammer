@@ -33,7 +33,7 @@ public extension Bot {
         /// Mode for parsing entities in the explanation. See formatting options for more details.
         var explanationParseMode: ParseMode?
 
-        /// List of special entities that appear in the poll explanation, which can be specified instead of parse_mode
+        /// A JSON-serialized list of special entities that appear in the poll explanation, which can be specified instead of parse_mode
         var explanationEntities: [MessageEntity]?
 
         /// Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with close_date.
@@ -47,6 +47,9 @@ public extension Bot {
 
         /// Sends the message silently. Users will receive a notification with no sound.
         var disableNotification: Bool?
+
+        /// Protects the contents of the sent message from forwarding and saving
+        var protectContent: Bool?
 
         /// If the message is a reply, ID of the original message
         var replyToMessageId: Int?
@@ -73,12 +76,13 @@ public extension Bot {
             case closeDate = "close_date"
             case isClosed = "is_closed"
             case disableNotification = "disable_notification"
+            case protectContent = "protect_content"
             case replyToMessageId = "reply_to_message_id"
             case allowSendingWithoutReply = "allow_sending_without_reply"
             case replyMarkup = "reply_markup"
         }
 
-        public init(chatId: ChatId, question: String, options: [String], isAnonymous: Bool? = nil, type: String? = nil, allowsMultipleAnswers: Bool? = nil, correctOptionId: Int? = nil, explanation: String? = nil, explanationParseMode: ParseMode? = nil, explanationEntities: [MessageEntity]? = nil, openPeriod: Int? = nil, closeDate: Int? = nil, isClosed: Bool? = nil, disableNotification: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
+        public init(chatId: ChatId, question: String, options: [String], isAnonymous: Bool? = nil, type: String? = nil, allowsMultipleAnswers: Bool? = nil, correctOptionId: Int? = nil, explanation: String? = nil, explanationParseMode: ParseMode? = nil, explanationEntities: [MessageEntity]? = nil, openPeriod: Int? = nil, closeDate: Int? = nil, isClosed: Bool? = nil, disableNotification: Bool? = nil, protectContent: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
             self.chatId = chatId
             self.question = question
             self.options = options
@@ -93,6 +97,7 @@ public extension Bot {
             self.closeDate = closeDate
             self.isClosed = isClosed
             self.disableNotification = disableNotification
+            self.protectContent = protectContent
             self.replyToMessageId = replyToMessageId
             self.allowSendingWithoutReply = allowSendingWithoutReply
             self.replyMarkup = replyMarkup

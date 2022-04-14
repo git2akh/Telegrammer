@@ -15,7 +15,7 @@ public extension Bot {
         /// Mode for parsing entities in the message text. See formatting options for more details.
         var parseMode: ParseMode?
 
-        /// List of special entities that appear in message text, which can be specified instead of parse_mode
+        /// A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
         var entities: [MessageEntity]?
 
         /// Disables link previews for links in this message
@@ -23,6 +23,9 @@ public extension Bot {
 
         /// Sends the message silently. Users will receive a notification with no sound.
         var disableNotification: Bool?
+
+        /// Protects the contents of the sent message from forwarding and saving
+        var protectContent: Bool?
 
         /// If the message is a reply, ID of the original message
         var replyToMessageId: Int?
@@ -41,18 +44,20 @@ public extension Bot {
             case entities = "entities"
             case disableWebPagePreview = "disable_web_page_preview"
             case disableNotification = "disable_notification"
+            case protectContent = "protect_content"
             case replyToMessageId = "reply_to_message_id"
             case allowSendingWithoutReply = "allow_sending_without_reply"
             case replyMarkup = "reply_markup"
         }
 
-        public init(chatId: ChatId, text: String, parseMode: ParseMode? = nil, entities: [MessageEntity]? = nil, disableWebPagePreview: Bool? = nil, disableNotification: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
+        public init(chatId: ChatId, text: String, parseMode: ParseMode? = nil, entities: [MessageEntity]? = nil, disableWebPagePreview: Bool? = nil, disableNotification: Bool? = nil, protectContent: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
             self.chatId = chatId
             self.text = text
             self.parseMode = parseMode
             self.entities = entities
             self.disableWebPagePreview = disableWebPagePreview
             self.disableNotification = disableNotification
+            self.protectContent = protectContent
             self.replyToMessageId = replyToMessageId
             self.allowSendingWithoutReply = allowSendingWithoutReply
             self.replyMarkup = replyMarkup

@@ -30,6 +30,9 @@ public extension Bot {
         /// Sends the message silently. Users will receive a notification with no sound.
         var disableNotification: Bool?
 
+        /// Protects the contents of the sent message from forwarding and saving
+        var protectContent: Bool?
+
         /// If the message is a reply, ID of the original message
         var replyToMessageId: Int?
 
@@ -49,12 +52,13 @@ public extension Bot {
             case heading = "heading"
             case proximityAlertRadius = "proximity_alert_radius"
             case disableNotification = "disable_notification"
+            case protectContent = "protect_content"
             case replyToMessageId = "reply_to_message_id"
             case allowSendingWithoutReply = "allow_sending_without_reply"
             case replyMarkup = "reply_markup"
         }
 
-        public init(chatId: ChatId, latitude: Float, longitude: Float, horizontalAccuracy: Float? = nil, livePeriod: Int? = nil, heading: Int? = nil, proximityAlertRadius: Int? = nil, disableNotification: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
+        public init(chatId: ChatId, latitude: Float, longitude: Float, horizontalAccuracy: Float? = nil, livePeriod: Int? = nil, heading: Int? = nil, proximityAlertRadius: Int? = nil, disableNotification: Bool? = nil, protectContent: Bool? = nil, replyToMessageId: Int? = nil, allowSendingWithoutReply: Bool? = nil, replyMarkup: ReplyMarkup? = nil) {
             self.chatId = chatId
             self.latitude = latitude
             self.longitude = longitude
@@ -63,6 +67,7 @@ public extension Bot {
             self.heading = heading
             self.proximityAlertRadius = proximityAlertRadius
             self.disableNotification = disableNotification
+            self.protectContent = protectContent
             self.replyToMessageId = replyToMessageId
             self.allowSendingWithoutReply = allowSendingWithoutReply
             self.replyMarkup = replyMarkup

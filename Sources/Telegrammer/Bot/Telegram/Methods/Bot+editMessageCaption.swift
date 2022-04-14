@@ -21,7 +21,7 @@ public extension Bot {
         /// Mode for parsing entities in the message caption. See formatting options for more details.
         var parseMode: ParseMode?
 
-        /// List of special entities that appear in the caption, which can be specified instead of parse_mode
+        /// A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode
         var captionEntities: [MessageEntity]?
 
         /// A JSON-serialized object for an inline keyboard.
