@@ -64,10 +64,11 @@ public final class Message: Codable {
         case connectedWebsite = "connected_website"
         case passportData = "passport_data"
         case proximityAlertTriggered = "proximity_alert_triggered"
-        case voiceChatScheduled = "voice_chat_scheduled"
-        case voiceChatStarted = "voice_chat_started"
-        case voiceChatEnded = "voice_chat_ended"
-        case voiceChatParticipantsInvited = "voice_chat_participants_invited"
+        case videoChatScheduled = "video_chat_scheduled"
+        case videoChatStarted = "video_chat_started"
+        case videoChatEnded = "video_chat_ended"
+        case videoChatParticipantsInvited = "video_chat_participants_invited"
+        case webAppData = "web_app_data"
         case replyMarkup = "reply_markup"
     }
 
@@ -230,22 +231,25 @@ public final class Message: Codable {
     /// Optional. Service message. A user in the chat triggered another user's proximity alert while sharing Live Location.
     public var proximityAlertTriggered: ProximityAlertTriggered?
 
-    /// Optional. Service message: voice chat scheduled
-    public var voiceChatScheduled: VoiceChatScheduled?
+    /// Optional. Service message: video chat scheduled
+    public var videoChatScheduled: VideoChatScheduled?
 
-    /// Optional. Service message: voice chat started
-    public var voiceChatStarted: VoiceChatStarted?
+    /// Optional. Service message: video chat started
+    public var videoChatStarted: VideoChatStarted?
 
-    /// Optional. Service message: voice chat ended
-    public var voiceChatEnded: VoiceChatEnded?
+    /// Optional. Service message: video chat ended
+    public var videoChatEnded: VideoChatEnded?
 
-    /// Optional. Service message: new participants invited to a voice chat
-    public var voiceChatParticipantsInvited: VoiceChatParticipantsInvited?
+    /// Optional. Service message: new participants invited to a video chat
+    public var videoChatParticipantsInvited: VideoChatParticipantsInvited?
+
+    /// Optional. Service message: data sent by a Web App
+    public var webAppData: WebAppData?
 
     /// Optional. Inline keyboard attached to the message. login_url buttons are represented as ordinary url buttons.
     public var replyMarkup: InlineKeyboardMarkup?
 
-    public init (messageId: Int, from: User? = nil, senderChat: Chat? = nil, date: Int, chat: Chat, forwardFrom: User? = nil, forwardFromChat: Chat? = nil, forwardFromMessageId: Int? = nil, forwardSignature: String? = nil, forwardSenderName: String? = nil, forwardDate: Int? = nil, isAutomaticForward: Bool? = nil, replyToMessage: Message? = nil, viaBot: User? = nil, editDate: Int? = nil, hasProtectedContent: Bool? = nil, mediaGroupId: String? = nil, authorSignature: String? = nil, text: String? = nil, entities: [MessageEntity]? = nil, animation: Animation? = nil, audio: Audio? = nil, document: Document? = nil, photo: [PhotoSize]? = nil, sticker: Sticker? = nil, video: Video? = nil, videoNote: VideoNote? = nil, voice: Voice? = nil, caption: String? = nil, captionEntities: [MessageEntity]? = nil, contact: Contact? = nil, dice: Dice? = nil, game: Game? = nil, poll: Poll? = nil, venue: Venue? = nil, location: Location? = nil, newChatMembers: [User]? = nil, leftChatMember: User? = nil, newChatTitle: String? = nil, newChatPhoto: [PhotoSize]? = nil, deleteChatPhoto: Bool? = nil, groupChatCreated: Bool? = nil, supergroupChatCreated: Bool? = nil, channelChatCreated: Bool? = nil, messageAutoDeleteTimerChanged: MessageAutoDeleteTimerChanged? = nil, migrateToChatId: Int64? = nil, migrateFromChatId: Int64? = nil, pinnedMessage: Message? = nil, invoice: Invoice? = nil, successfulPayment: SuccessfulPayment? = nil, connectedWebsite: String? = nil, passportData: PassportData? = nil, proximityAlertTriggered: ProximityAlertTriggered? = nil, voiceChatScheduled: VoiceChatScheduled? = nil, voiceChatStarted: VoiceChatStarted? = nil, voiceChatEnded: VoiceChatEnded? = nil, voiceChatParticipantsInvited: VoiceChatParticipantsInvited? = nil, replyMarkup: InlineKeyboardMarkup? = nil) {
+    public init (messageId: Int, from: User? = nil, senderChat: Chat? = nil, date: Int, chat: Chat, forwardFrom: User? = nil, forwardFromChat: Chat? = nil, forwardFromMessageId: Int? = nil, forwardSignature: String? = nil, forwardSenderName: String? = nil, forwardDate: Int? = nil, isAutomaticForward: Bool? = nil, replyToMessage: Message? = nil, viaBot: User? = nil, editDate: Int? = nil, hasProtectedContent: Bool? = nil, mediaGroupId: String? = nil, authorSignature: String? = nil, text: String? = nil, entities: [MessageEntity]? = nil, animation: Animation? = nil, audio: Audio? = nil, document: Document? = nil, photo: [PhotoSize]? = nil, sticker: Sticker? = nil, video: Video? = nil, videoNote: VideoNote? = nil, voice: Voice? = nil, caption: String? = nil, captionEntities: [MessageEntity]? = nil, contact: Contact? = nil, dice: Dice? = nil, game: Game? = nil, poll: Poll? = nil, venue: Venue? = nil, location: Location? = nil, newChatMembers: [User]? = nil, leftChatMember: User? = nil, newChatTitle: String? = nil, newChatPhoto: [PhotoSize]? = nil, deleteChatPhoto: Bool? = nil, groupChatCreated: Bool? = nil, supergroupChatCreated: Bool? = nil, channelChatCreated: Bool? = nil, messageAutoDeleteTimerChanged: MessageAutoDeleteTimerChanged? = nil, migrateToChatId: Int64? = nil, migrateFromChatId: Int64? = nil, pinnedMessage: Message? = nil, invoice: Invoice? = nil, successfulPayment: SuccessfulPayment? = nil, connectedWebsite: String? = nil, passportData: PassportData? = nil, proximityAlertTriggered: ProximityAlertTriggered? = nil, videoChatScheduled: VideoChatScheduled? = nil, videoChatStarted: VideoChatStarted? = nil, videoChatEnded: VideoChatEnded? = nil, videoChatParticipantsInvited: VideoChatParticipantsInvited? = nil, webAppData: WebAppData? = nil, replyMarkup: InlineKeyboardMarkup? = nil) {
         self.messageId = messageId
         self.from = from
         self.senderChat = senderChat
@@ -299,10 +303,11 @@ public final class Message: Codable {
         self.connectedWebsite = connectedWebsite
         self.passportData = passportData
         self.proximityAlertTriggered = proximityAlertTriggered
-        self.voiceChatScheduled = voiceChatScheduled
-        self.voiceChatStarted = voiceChatStarted
-        self.voiceChatEnded = voiceChatEnded
-        self.voiceChatParticipantsInvited = voiceChatParticipantsInvited
+        self.videoChatScheduled = videoChatScheduled
+        self.videoChatStarted = videoChatStarted
+        self.videoChatEnded = videoChatEnded
+        self.videoChatParticipantsInvited = videoChatParticipantsInvited
+        self.webAppData = webAppData
         self.replyMarkup = replyMarkup
     }
 }
