@@ -9,7 +9,7 @@ public extension Bot {
         /// Unique identifier for the target chat
         var chatId: Int64
 
-        /// Short name of the game, serves as the unique identifier for the game. Set up your games via Botfather.
+        /// Short name of the game, serves as the unique identifier for the game. Set up your games via @BotFather.
         var gameShortName: String
 
         /// Sends the message silently. Users will receive a notification with no sound.

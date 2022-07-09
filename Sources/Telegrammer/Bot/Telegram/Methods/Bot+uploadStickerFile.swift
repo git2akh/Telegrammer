@@ -9,7 +9,7 @@ public extension Bot {
         /// User identifier of sticker file owner
         var userId: Int64
 
-        /// PNG image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. More info on Sending Files »
+        /// PNG image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px. More information on Sending Files »
         var pngSticker: InputFile
 
         /// Custom keys for coding/decoding `UploadStickerFileParams` struct

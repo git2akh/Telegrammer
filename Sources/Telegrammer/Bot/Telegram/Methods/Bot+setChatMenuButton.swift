@@ -9,7 +9,7 @@ public extension Bot {
         /// Unique identifier for the target private chat. If not specified, default bot's menu button will be changed
         var chatId: Int64?
 
-        /// A JSON-serialized object for the new bot's menu button. Defaults to MenuButtonDefault
+        /// A JSON-serialized object for the bot's new menu button. Defaults to MenuButtonDefault
         var menuButton: MenuButton?
 
         /// Custom keys for coding/decoding `SetChatMenuButtonParams` struct
